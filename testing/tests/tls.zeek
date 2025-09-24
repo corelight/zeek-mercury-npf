@@ -6,9 +6,11 @@
 # @TEST-EXEC: btest-diff ssl-chrome-1250-tls-x25519-kyber.log
 # @TEST-EXEC: btest-diff ssl-tls1.2.log
 
+redef Mercury::TLS::fingerprint_version = Mercury::TLS::MERCURY_TLS_NONE;
+
 # @TEST-START-NEXT
 
-redef Mercury::TLS::fingerprint_version = Mercury::TLS::MERCURY_TLS;
+# redef Mercury::TLS::fingerprint_version = Mercury::TLS::MERCURY_TLS;
 
 # @TEST-START-NEXT
 

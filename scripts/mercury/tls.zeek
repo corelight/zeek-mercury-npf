@@ -44,7 +44,7 @@ export {
 		MERCURY_TLS_2
 	};
 
-	option fingerprint_version = MERCURY_TLS_NONE;
+	option fingerprint_version = MERCURY_TLS;
 }
 
 # This is a quite hacky. We rely on the base SSL scripts of Zeek to be loaded and inject us there.
