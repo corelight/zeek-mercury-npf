@@ -29,7 +29,7 @@ event connection_SYN_packet(c: connection, pkt: SYN_packet)
 
 	if ( header?$ip && header?$tcp )
 		npf += fmt("(40)(%s)(%02x)(%04x)(%s)", header$ip$id == 0 ? "00" : "", header$ip$ttl & 0xe0, header$tcp$win, string_options);
-	else if ( header?$ip6 && header?$ tcp )
+	else if ( header?$ip6 && header?$tcp )
 		npf += fmt("(60)(%s)(%02x)(%04x)(%s)", header$ip6$flow == 0 ? "00" : "", header$ip6$hlim & 0xe0, header$tcp$win, string_options);
 	else # No ip header?
 		return;

@@ -109,6 +109,12 @@ event ssl_client_hello(c: connection, version: count, record_version: count, pos
 	if ( c?$quic || fingerprint_version == MERCURY_TLS_NONE )
 		return;
 
+	# also don't generate for OpenVPN
+@ifdef ( OpenVPN::Info )
+	if ( c?$openvpn )
+		return;
+@endif
+
 	# we already had a client hello. Only do this the first time.
 	if ( c$ssl?$npf )
 		return;
