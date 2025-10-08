@@ -44,6 +44,7 @@ export {
 		MERCURY_TLS_2
 	};
 
+	## Mercury fingerprint version to use
 	option fingerprint_version = MERCURY_TLS;
 }
 

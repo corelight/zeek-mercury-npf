@@ -1,5 +1,6 @@
 @load ./http
 @load ./tcp
+@load ./ssh
 
 # this has to be loaded before the TLS script - to allow the TLS script to skip logging openvpn connections
 @if ( Analyzer::has_tag("spicy_OpenVPN_UDP") )
