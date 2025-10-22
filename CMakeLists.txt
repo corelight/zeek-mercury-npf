@@ -39,7 +39,7 @@ foreach(file ${bif_files})
     zeek_plugin_bif(${file})
 endforeach ()
 
-zeek_plugin_dist_files(README CHANGES COPYING VERSION)
+zeek_plugin_dist_files(README COPYING VERSION)
 zeek_plugin_end()
 
 if ("${PROJECT_SOURCE_DIR}" STREQUAL "${CMAKE_SOURCE_DIR}")
