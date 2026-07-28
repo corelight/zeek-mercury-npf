@@ -21,7 +21,7 @@ event ssh_capabilities(c: connection, cookie: string, cap: SSH::Capabilities) &p
 	if ( ! c?$ssh )
 		return;
 
-	local npf = fmt("ssh/(%s)(%s)(%s)(%s)(%s)(%s)(%s)(%s)(%s)(%s)",
+	local npf = fmt("(%s)(%s)(%s)(%s)(%s)(%s)(%s)(%s)(%s)(%s)",
 		fmt_list(cap$kex_algorithms),
 		fmt_list(cap$server_host_key_algorithms),
 		fmt_list(cap$encryption_algorithms?$client_to_server ? cap$encryption_algorithms$client_to_server: vector()),
@@ -34,7 +34,7 @@ event ssh_capabilities(c: connection, cookie: string, cap: SSH::Capabilities) &p
 		fmt_list((cap?$languages && cap$languages?$server_to_client) ? cap$languages$server_to_client : vector()));
 
 	if ( cap$is_server )
-		c$ssh$server_npf = npf;
+		c$ssh$server_npf = "ssh_server/" + npf;
 	else
-		c$ssh$client_npf = npf;
+		c$ssh$client_npf = "ssh/" + npf;
 	}
