@@ -11,4 +11,3 @@
 # @TEST-START-NEXT
 
 redef Mercury::QUIC::fingerprint_version = Mercury::QUIC::MERCURY_QUIC_1;
-

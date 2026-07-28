@@ -5,4 +5,3 @@
 # @TEST-EXEC: mv conn.log conn-v6.log
 # @TEST-EXEC: btest-diff conn-v4.log
 # @TEST-EXEC: btest-diff conn-v6.log
-

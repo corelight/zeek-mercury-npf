@@ -89,7 +89,7 @@ function quic_transport_parameter%(ext: string%): string_vec
 		if ( ! length )
 			return result;
 
-		// have to skip length of lenth field, plus length of value
+		// have to skip length of length field, plus length of value
 		if ( buffer.size() < tp_length->value + tp_length->length )
 			return result;
 

@@ -7,4 +7,3 @@
 # @TEST-EXEC: btest-diff ssl-dtls13-cid.log
 
 redef Mercury::TLS::fingerprint_version = Mercury::TLS::MERCURY_TLS;
-
