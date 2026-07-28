@@ -16,7 +16,16 @@ The plugin inspects the following protocols and generates the NPF for them:
 
 ## Installation
 
-This plugin is distributed as a Zeek package. You can install it using the Zeek package manager `zkg` after cloning the repository using
+This plugin is distributed as a Zeek package.
+
+To install the current version using the Zeek package manager `zkg`, just use
+
+```
+zkg install corelight/zeek-mercury-npf
+```
+
+If you want to install it from the current repo, use
+
 
 ```bash
 zkg install .
