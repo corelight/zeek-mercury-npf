@@ -72,6 +72,11 @@ jobs:
       run: |
         ./configure
         cd build && make
+    - name: Get test files to correct location
+      run: |
+        cd /tmp
+        git clone --depth 1 https://github.com/zeek/zeek
+        mv /tmp/zeek/testing/btest/Traces /usr/local/zeek/share/btest/data/pcaps
     - name: Run BTest suite
       run: |
         btest -djc testing/btest.cfg --xml=btest-results.xml
