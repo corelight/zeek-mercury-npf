@@ -158,7 +158,10 @@ function tcp_option_list%(%): Mercury::mercury_tcp_option_list
 
 		auto r = make_intrusive<RecordVal>(mercury_tcp_option);
 		r->Assign(0, opt);
-		r->Assign(1, zeek::make_intrusive<zeek::StringVal>(current_option_data.size(), reinterpret_cast<const char*>(current_option_data.data())));
+		if ( ! current_option_data.empty() )
+			r->Assign(1, zeek::make_intrusive<zeek::StringVal>(current_option_data.size(), reinterpret_cast<const char*>(current_option_data.data())));
+		else
+			r->Assign(1, zeek::val_mgr->EmptyString());
 		result->Append(r);
 
 		// if ( opt == TCPOPT_EOL )
