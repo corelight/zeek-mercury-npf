@@ -2,9 +2,8 @@
 script_dir = mercury
 build_command = ./configure && cmake --build build
 test_command = cd testing && btest -c btest.cfg
-summary = TODO: A summary of Mercury in one line
-description = TODO: A more detailed description of Mercury.
-	It can span multiple lines, with this indentation.
+summary = Mercury fingerprints for Zeek
+description = This Zeek plugin implements the Network Fingerprinting (NPF) format as specified in the Mercury project.
 depends =
 	zeek >=4.0.0
 
